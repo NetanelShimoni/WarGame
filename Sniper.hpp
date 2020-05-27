@@ -11,7 +11,7 @@ using  namespace std;
 class Sniper:public Soldier{
 public:
     Sniper(int num_p):Soldier(100,50,num_p){}
-    void static Fight(vector<vector<Soldier *>> &board, pair<int, int> location);
+    void  Fight(vector<vector<Soldier *>> &board, pair<int, int> location);
 };
 
 

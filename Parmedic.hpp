@@ -10,8 +10,8 @@
 using  namespace std;
 class Parmedic:public Soldier{
 public:
-    Parmedic(int num_p):Soldier(100,0,50,num_p){}
-    void static to_heal(vector<vector<Soldier *>> &board, pair<int, int> location);
+    Parmedic(int num_p):Soldier(100,0,num_p){}
+    void Fight(vector<vector<Soldier *>> &board, pair<int, int> location);
 };
 
 

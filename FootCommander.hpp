@@ -10,10 +10,13 @@
 #include <vector>
 
 using  namespace std;
-class FootCommander:public Soldier{
+class FootCommander:public FootSoldier{
 public:
-    FootCommander(int num_p):Soldier(150,20,num_p){}
-    void Fight(vector<vector<Soldier*>> board,pair<int,int> location);
+    FootCommander(int num_p):FootSoldier(num_p){
+    this->health=150;
+    this->damage=20;
+}
+    void Fight(vector<vector<Soldier*>> &board, pair<int,int> location);
 
 };
 

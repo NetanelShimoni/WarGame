@@ -6,8 +6,7 @@
 #include <iostream>
 #include <math.h>
 
-void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) {
-
+void FootSoldier::Fight(vector<vector<Soldier *>> &board, pair<int, int> location) {
     int inf = INFINITY;
     int dist = 0;
     Soldier *attack= board[location.first][location.second];

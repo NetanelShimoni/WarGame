@@ -6,11 +6,18 @@
 #define WARGAME_SNIPERCOMMANDER_HPP
 
 #include "Soldier.hpp"
+#include "Sniper.hpp"
+#include <vector>
 using  namespace std;
-class SniperCommander:public Soldier{
+class SniperCommander:public Sniper{
 public:
-    SniperCommander(int num_p):Soldier(120,100,num_p){}
-};
+    SniperCommander(int num_p):Sniper(num_p){
+        this->health=120;
+        this->damage=100;
+    }
+     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) ;
+
+    };
 
 
 

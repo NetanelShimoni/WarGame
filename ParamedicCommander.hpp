@@ -6,10 +6,15 @@
 #define WARGAME_PARAMEDICCOMMANDER_HPP
 
 #include "Soldier.hpp"
+#include "Parmedic.hpp"
+#include <vector>
 using  namespace std;
-class ParmedicCommander:public Soldier{
+class ParmedicCommander:public Parmedic {
 public:
-    ParmedicCommander(int num_p):Soldier(200,0,100,num_p){}
+    ParmedicCommander(int num_p):Parmedic(num_p){
+        this->health=200;
+    }
+    static void to_heal_Cperamdic(vector<vector<Soldier *>> &board, pair<int, int> location);
 };
 
 
