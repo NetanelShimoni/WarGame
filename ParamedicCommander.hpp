@@ -14,7 +14,7 @@ public:
     ParmedicCommander(int num_p):Parmedic(num_p){
         this->health=200;
     }
-    static void to_heal_Cperamdic(vector<vector<Soldier *>> &board, pair<int, int> location);
+     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location);
 };
 
 

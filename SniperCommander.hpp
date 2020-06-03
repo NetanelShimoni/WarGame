@@ -1,5 +1,5 @@
 //
-// Created by netanel on 25/05/2020.
+// Created by netanel & Or on 25/05/2020.
 //
 
 #ifndef WARGAME_SNIPERCOMMANDER_HPP
