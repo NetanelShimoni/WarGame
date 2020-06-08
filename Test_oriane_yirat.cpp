@@ -127,10 +127,7 @@ TEST_CASE("Move Function - Commander"){
             CHECK(typeid(*p[{3,2}])== typeid(FootCommander));
 
     p.move(1,{2,3},WarGame::Board::Down);
-    cout<<"eroorreee"<<endl;
-
-
-    CHECK(p[{2,3}]==nullptr);
+            CHECK(p[{2,3}]==nullptr);
             CHECK(typeid(*p[{1,3}])==typeid(SniperCommander));
 
 
