@@ -8,9 +8,9 @@
 #include "DemoGame.hpp"  
 
 using namespace std;
-//using namespace WarGame;
-//int main() {
-//	WarGame::DemoGame demoGame;
-//	cout << "The winner is:\n " << demoGame.play() << endl;
-//    return 0;
-//}
+using namespace WarGame;
+int main() {
+	DemoGame demoGame;
+	cout << "The winner is:\n " << demoGame.play() << endl;
+    return 0;
+}
