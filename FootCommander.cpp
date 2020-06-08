@@ -1,35 +1,84 @@
 //
 // Created by netanel & Or on 25/05/2020.
 //
+//
+
+
+
+#include <cmath>
+#include "FootSoldier.hpp"
+#include "FootCommander.hpp"
+#include <iostream>
+
+
+
+
+
+
 
 #include "FootCommander.hpp"
 #include "FootSoldier.hpp"
 #include <stdio.h>
 #include <iostream>
 #include <math.h>
-
-void FootCommander::Fight(vector<vector<Soldier *>> &board, pair<int, int> location) {
-    //FootSoldier::Fight_foot(board, location);
-     dynamic_cast<FootSoldier *>(board[location.first][location.second])->Fight(board,location);
-
-
-    int inf = INFINITY;
+#include <zconf.h>
+void help_attack(vector<vector<Soldier *>> &board, pair<int, int> location){
+    int inf = 1000000000;
     int dist = 0;
-    Soldier *attack = board[location.first][location.second];
-    int damege_attack = attack->get_damage();
+    int index_i;
+    //cout<<"i am in fight footsolder"<<endl;
+    // sleep(5);
+    int index_j;
+    Soldier *attack= board[location.first][location.second];
+    int damege_attack=attack->get_damage();
     int team = attack->get_num_player();
-    pair<int, int> solider;
-    for (int y = 0; y < board.size(); ++y) {
-        for (int x = 0; x < board[0].size(); ++x) {
-            // Soldier *ps = ;
-            if (board[y][x] != nullptr) {
-                Soldier *ps=board[y][x];
-                if (dynamic_cast<FootSoldier *>(ps) && ps->get_num_player() == team) {
-                    solider.first = y;
-                    solider.second = x;
-                    dynamic_cast<FootSoldier *>(ps)->Fight(board, solider);
-                    //cout << "i am here" << endl;
+    for (int i = 0; i < board.size(); ++i) {
+        for (int j = 0; j < board[0].size(); ++j) {
+            if(board[i][j]!=nullptr && board[i][j]->get_num_player()!=team){
+                dist = sqrt(pow((location.first - i), 2) + pow((location.second - j), 2));
+                if (dist < inf){
+                    inf=dist;
+                    index_i=i;
+                    index_j=j;
+                }
+            }
 
+        }
+    }
+
+    board[index_i][index_j]->set_health(board[index_i][index_j]->get_health()-damege_attack);
+
+
+    if (board[index_i][index_j]->get_health()<=0){
+        board[index_i][index_j]= nullptr;
+        delete board[index_i][index_j];
+    }
+
+}
+void FootCommander::Fight(vector<vector<Soldier *>> &board, pair<int, int> dest) {
+    {
+        for(int i=0;i<board.size();i++)
+        {
+            for(int j=0;j<board[i].size();j++)
+            {
+                Soldier *s = board[i][j];
+                if(s!=nullptr)
+                {
+                    if(FootSoldier *fs = dynamic_cast<FootSoldier*> (s))
+                    {
+
+                        FootCommander *fc = dynamic_cast<FootCommander*> (s);
+                        if((fc == nullptr) || (i == dest.first && j==dest.second))
+                        {
+                            if(fs->get_num_player() == board[dest.first][dest.second]->get_num_player())
+                            {
+                                fs->FootSoldier::Fight(board,make_pair(i,j));
+
+                            }
+                        }
+
+
+                    }
                 }
             }
         }

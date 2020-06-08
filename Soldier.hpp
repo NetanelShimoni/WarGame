@@ -13,13 +13,16 @@ public:
     int hp;
 
 public:
-    Soldier(int h,int d,int num_p):health(h),damage(d),num_player(num_p){}
+    Soldier(int h,int d,int num_p):health(h),damage(d),num_player(num_p){
+
+    }
     Soldier(int h,int d,int hp,int num_p):health(h),damage(d),num_player(num_p) , hp(hp){}
     int get_health(){return health;}
    // virtual void Fight(std::vector<std::vector<Soldier *>> &board, std::pair<int, int> location)=0;
     void set_health(int health){this->health=health;}
     int get_damage(){return damage;}
     int get_num_player(){return num_player;}
+    virtual void Fight(std::vector<std::vector<Soldier*>> &board, std::pair<int,int> dest)=0;
 
     virtual ~Soldier(){
     }

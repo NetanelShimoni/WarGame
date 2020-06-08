@@ -88,12 +88,12 @@ TEST_CASE("Test_3") {
          CHECK(!board.has_soldiers(1));
          CHECK(!board.has_soldiers(2));
 
-    board[{2, 1}] = new ParmedicCommander(1);
+    board[{2, 1}] = new ParamedicCommander(1);
     board[{1, 2}] = new FootSoldier(1);
 
 
     board[{1, 0}] = new FootSoldier(2);
-    board[{2, 3}] = new ParmedicCommander(2);
+    board[{2, 3}] = new ParamedicCommander(2);
 
           CHECK(board.has_soldiers(1));
           CHECK(board.has_soldiers(2));
@@ -260,7 +260,7 @@ TEST_CASE("Test_6") {
             CHECK(!board.has_soldiers(1));
             CHECK(!board.has_soldiers(2));
     board[{0, 0}] = new Sniper(1);
-    board[{0, 1}] = new ParmedicCommander(1);
+    board[{0, 1}] = new ParamedicCommander(1);
     board[{2, 2}] = new Sniper(2);
             CHECK(board.has_soldiers(1));
             CHECK(board.has_soldiers(2));

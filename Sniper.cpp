@@ -14,25 +14,26 @@
 
     Soldier *attack= board[location.first][location.second];
     int damege_attack=attack->get_damage();
+    int index_i;
+    int index_j;
     int team = attack->get_num_player();
     pair<int, int> target;
-    for (int y = 0; y < board.size(); ++y) {
-        for (int x = 0; x < board[0].size(); ++x) {
-            if (x != location.first && y != location.second) {
-                power= board[y][x]->get_health();
-                int team_target = board[y][x]->get_num_player();
-                if (power > max_health && team!=team_target) {
-                    max_health = power;
-                    target.first = x;
-                    target.second = y;
+    for (int i = 0; i < board.size(); ++i) {
+        for (int j = 0; j < board[0].size(); ++j) {
+            if(board[i][j]!=nullptr && board[i][j]->get_num_player()!=team){
+                if(board[i][j]->get_health()>max_health){
+                    max_health=board[i][j]->get_health();
+                    index_i=i;
+                    index_j=j;
                 }
             }
+
         }
     }
-    Soldier* tar= board[target.first][target.second];
-    tar->set_health(tar->get_health()-damege_attack);
-    if (tar->get_health()<=0){
-        delete tar;
+    board[index_i][index_j]->set_health(board[index_i][index_j]->get_health()-damege_attack);
+    if (board[index_i][index_j]->get_health()<=0){
+        board[index_i][index_j]= nullptr;
+        delete board[index_i][index_j];
     }
 
 }

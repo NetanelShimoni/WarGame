@@ -15,7 +15,7 @@ public:
         this->health=120;
         this->damage=100;
     }
-     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) ;
+     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 
     };
 

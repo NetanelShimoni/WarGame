@@ -6,15 +6,15 @@
 #define WARGAME_PARAMEDICCOMMANDER_HPP
 
 #include "Soldier.hpp"
-#include "Parmedic.hpp"
+#include "Paramedic.hpp"
 #include <vector>
 using  namespace std;
-class ParmedicCommander:public Parmedic {
+class ParamedicCommander: public Paramedic {
 public:
-    ParmedicCommander(int num_p):Parmedic(num_p){
+    ParamedicCommander(int num_p): Paramedic(num_p){
         this->health=200;
     }
-     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location);
+     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 };
 
 
