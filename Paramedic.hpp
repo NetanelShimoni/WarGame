@@ -10,7 +10,9 @@
 using  namespace std;
 class Paramedic: public Soldier{
 public:
-    Paramedic(int num_p): Soldier(100, 0, num_p){}
+    Paramedic(int num_p): Soldier(100, 0, num_p){
+        this->max=100;
+    }
     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 };
 

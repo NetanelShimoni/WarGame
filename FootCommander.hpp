@@ -15,6 +15,7 @@ public:
     FootCommander(int num_p):FootSoldier(num_p){
     this->health=150;
     this->damage=20;
+    this->max=150;
 }
     void Fight(vector<vector<Soldier*>> &board, pair<int,int> location) override ;
 

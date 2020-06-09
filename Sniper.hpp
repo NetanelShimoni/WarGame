@@ -12,7 +12,7 @@ using  namespace std;
 class Sniper:public Soldier{
 public:
     Sniper(int num_p):Soldier(100,50,num_p){
-
+        this->max=100;
     }
     void  Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 };

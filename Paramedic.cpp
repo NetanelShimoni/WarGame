@@ -53,14 +53,14 @@ void Paramedic::Fight(vector<vector<Soldier *>> &board, pair<int, int> location)
     if (board[i + 1][j] != nullptr && (i + 1) < board.size() && j < board[0].size()) {
         Soldier *s = board[i + 1][j];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i + 1][j] = s;
         }
     }
     if (board[i][j + 1] != nullptr && (i) < board.size() && (j + 1) < board[0].size()) {
         Soldier *s = board[i][j + 1];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i][j + 1] = s;
         }
 
@@ -68,7 +68,7 @@ void Paramedic::Fight(vector<vector<Soldier *>> &board, pair<int, int> location)
     if (board[i + 1][j + 1] != nullptr && (i + 1) < board.size() && (j + 1) < board[0].size()) {
         Soldier *s = board[i + 1][j + 1];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i + 1][j + 1] = s;
         }
 
@@ -76,35 +76,35 @@ void Paramedic::Fight(vector<vector<Soldier *>> &board, pair<int, int> location)
     if (board[i - 1][j] != nullptr && 0 <= (i - 1)) {
         Soldier *s = board[i - 1][j];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i - 1][j] = s;
         }
     }
     if (board[i][j - 1] != nullptr && 0 <= (j - 1)) {
         Soldier *s = board[i][j - 1];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i][j - 1] = s;
         }
     }
     if (board[i - 1][j - 1] != nullptr && 0 <= (j - 1) && 0 <= (i - 1)) {
         Soldier *s = board[i - 1][j - 1];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i - 1][j - 1] = s;
         }
     }
     if (board[i - 1][j + 1] != nullptr && 0 <= (i - 1) && (j + 1) < board[0].size()) {
         Soldier *s = board[i - 1][j + 1];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i - 1][j + 1] = s;
         }
     }
     if (board[i + 1][j - 1] != nullptr && (i + 1) < board.size() && (j - 1) >= 0) {
         Soldier *s = board[i + 1][j - 1];
         if (s->get_num_player() == team) {
-            s = chackType(s);
+            s->set_health(s->max);
             board[i + 1][j - 1] = s;
         }
     }

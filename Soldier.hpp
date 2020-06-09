@@ -11,6 +11,7 @@ public:
     int damage;
     int num_player;
     int hp;
+    int max;
 
 public:
     Soldier(int h,int d,int num_p):health(h),damage(d),num_player(num_p){

@@ -13,7 +13,9 @@
 using  namespace std;
 class FootSoldier:public Soldier{
 public:
-    FootSoldier(int num_p):Soldier(100,10,num_p){}
+    FootSoldier(int num_p):Soldier(100,10,num_p){
+        this->max=100;
+    }
      void Fight(vector<vector<Soldier*>> &board, pair<int,int> location)  override ;
 };
 

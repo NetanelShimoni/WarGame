@@ -14,6 +14,7 @@ public:
     SniperCommander(int num_p):Sniper(num_p){
         this->health=120;
         this->damage=100;
+        this->max=120;
     }
      void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 
