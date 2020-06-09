@@ -212,8 +212,8 @@ TEST_CASE("Test_5"){
             CHECK(!board.has_soldiers(1));
             CHECK(!board.has_soldiers(2));
     board[{0, 0}] = new Sniper(1);
-    board[{1, 1}] = new FootCommander(2);
-    board[{3, 3}] = new FootCommander(1);
+    board[{1, 1}] = new FootCommander(0, 2);
+    board[{3, 3}] = new FootCommander(0, 1);
     board[{4, 2}] = new Sniper(2);
             CHECK(board.has_soldiers(1));
             CHECK(board.has_soldiers(2));

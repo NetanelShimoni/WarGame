@@ -9,18 +9,15 @@
 #include "FootSoldier.hpp"
 #include <vector>
 
-using  namespace std;
-class FootCommander:public FootSoldier{
+using namespace std;
+
+class FootCommander : public Soldier {
 public:
-    FootCommander(int num_p):FootSoldier(num_p){
-    this->health=150;
-    this->damage=20;
-    this->max=150;
-}
-    void Fight(vector<vector<Soldier*>> &board, pair<int,int> location) override ;
+    FootCommander(int num_p) :Soldier(150,20,num_p,150) {}
+
+    void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
 
 };
-
 
 
 #endif //WARGAME_FOOTCOMMANDER_HPP

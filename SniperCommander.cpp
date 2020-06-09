@@ -39,7 +39,7 @@ void help_atack(vector<vector<Soldier *>> &board, pair<int, int> location) {
 }
 
 void SniperCommander::Fight(vector<vector<Soldier *>> &board, pair<int, int> dest) {
-
+//
 //    help_atack(board,location);
 //    int inf = INFINITY;
 //    int dist = 0;
@@ -47,18 +47,20 @@ void SniperCommander::Fight(vector<vector<Soldier *>> &board, pair<int, int> des
 //    int damege_attack = attack->get_damage();
 //    int team = attack->get_num_player();
 //    pair<int, int> solider;
-//    for (int y = 0; y < board.size(); ++y) {
-//        for (int x = 0; x < board[0].size(); ++x) {
-//            if (board[y][x]!= nullptr){
-//            Soldier *ps = board[y][x];
-//            if (dynamic_cast<Sniper *>(ps) && ps->get_num_player() == team) {
-//                solider.first = x;
-//                solider.second = y;
+//    for (int i = 0; i < board.size(); ++i) {
+//        for (int j = 0; j < board[0].size(); ++j) {
+//            if (board[i][j]!= nullptr){
+//            Soldier *ps = board[i][j];
+//                Soldier *check =dynamic_cast<SniperCommander *>(ps);
+//
+//                if ( check== nullptr && dynamic_cast<Sniper *>(ps) && ps->get_num_player() == team) {
+//                solider.first = i;
+//                solider.second = j;
 //                dynamic_cast<Sniper *>(ps)->Fight(board,solider);
 //                help_atack(board,solider);
 //            }
 //        }}
-//    }
+
     for (int i = 0; i < board.size(); i++) {
         for (int j = 0; j < board[i].size(); j++) {
             Soldier *s = board[i][j];
@@ -77,5 +79,4 @@ void SniperCommander::Fight(vector<vector<Soldier *>> &board, pair<int, int> des
                 }
             }
         }
-    }
-}
+    }}
