@@ -12,34 +12,7 @@
 #include <vector>
 #include <math.h>
 using  namespace std;
-//Soldier* chack_Type(Soldier *pSoldier) {
-//    if (dynamic_cast<FootSoldier*>(pSoldier)){
-//        return  new FootSoldier(pSoldier->get_num_player());
-//
-//    }
-//    if (dynamic_cast<FootCommander*>(pSoldier)){
-//        return new FootCommander(0, pSoldier->get_num_player());
-//        //return  new FootCommander::Soldier(150,20,pSoldier->get_num_player());
-//
-//    }
-//    if (dynamic_cast<Sniper*>(pSoldier)){
-//        return  new Sniper(pSoldier->get_num_player());
-//
-//    }
-//    if (dynamic_cast<SniperCommander*>(pSoldier)){
-//        return  new SniperCommander(pSoldier->get_num_player());
-//
-//    }
-//    if (dynamic_cast<Paramedic*>(pSoldier)){
-//        return  new Paramedic(pSoldier->get_num_player());
-//
-//    }
-//    if (dynamic_cast<ParamedicCommander*>(pSoldier)){
-//        return  new ParamedicCommander(pSoldier->get_num_player());
-//    }
-//
-//
-//}
+
 void help_heal(vector<vector<Soldier *>> &board, pair<int, int> location){
     int i = location.first;
     int j = location.second;
