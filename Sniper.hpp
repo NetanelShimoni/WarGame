@@ -1,20 +1,17 @@
-//
-// Created by netanel on 25/05/2020.
-//
-
-#ifndef WARGAME_SNIPER_HPP
-#define WARGAME_SNIPER_HPP
+#pragma once
 
 #include "Soldier.hpp"
-#include <iostream>
-#include <vector>
-using  namespace std;
-class Sniper:public Soldier{
+
+using namespace std;
+
+const int MAX_HP_S = 100;
+const int ACTION_S = 50;
+
+// namespace WarGame {
+class Sniper : public Soldier {
+
 public:
-    Sniper(int num_p):Soldier(100,50,num_p,100){
-    }
-    void  Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
+    Sniper(uint pNUM): Soldier(MAX_HP_S,ACTION_S,pNUM ) {}
+    Sniper(uint pNUM,uint maxhp,uint act): Soldier(maxhp,act,pNUM ) {}
+    void Fight(vector<vector<Soldier*>> &board,pair<int,int> dest);
 };
-
-
-#endif //WARGAME_SNIPER_HPP

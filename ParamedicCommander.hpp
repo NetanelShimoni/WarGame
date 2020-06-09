@@ -1,20 +1,17 @@
-//
-// Created by netanel & Or on 25/05/2020.
-//
+#pragma once
 
-#ifndef WARGAME_PARAMEDICCOMMANDER_HPP
-#define WARGAME_PARAMEDICCOMMANDER_HPP
-
-#include "Soldier.hpp"
 #include "Paramedic.hpp"
-#include <vector>
-using  namespace std;
-class ParamedicCommander: public Soldier {
+
+using namespace std;
+
+const int MAX_HP_PC = 200;
+const int ACTION_PC = 100;
+
+// namespace WarGame
+// {
+class ParamedicCommander : public Paramedic
+{
 public:
-    ParamedicCommander(int num_p): Soldier(200,0,num_p,200){
-    }
-     void Fight(vector<vector<Soldier *>> &board, pair<int, int> location) override;
+    ParamedicCommander(uint pNUM): Paramedic(pNUM, MAX_HP_PC, ACTION_PC) {}
+    void Fight(vector<vector<Soldier*>> &board,pair<int,int> dest);
 };
-
-
-#endif //WARGAME_PARAMEDICCOMMANDER_HPP

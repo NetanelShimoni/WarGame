@@ -1,23 +1,18 @@
-//
-// Created by netanel on 25/05/2020.
-//
-
-#ifndef WARGAME_FOOTSOLDIER_HPP
-#define WARGAME_FOOTSOLDIER_HPP
+#pragma once
 
 #include "Soldier.hpp"
-#include <stdio.h>
-#include <iostream>
-#include <vector>
 
-using  namespace std;
-class FootSoldier:public Soldier{
+using namespace std;
+
+const int MAX_HP = 100;
+const int ACTION = 10;
+// namespace WarGame
+// {
+class FootSoldier : public Soldier
+{
+
 public:
-    FootSoldier(int num_p):Soldier(100,10,num_p,100){
-
-
-    }
-     void Fight(vector<vector<Soldier*>> &board, pair<int,int> location)  override ;
+    FootSoldier(int pNUM) : Soldier(MAX_HP, ACTION, pNUM) {}
+    FootSoldier(int pNUM, int hp, int act) : Soldier(hp, act, pNUM) {}
+    void Fight(vector<vector<Soldier *>> &board, pair<int, int> dest);
 };
-
-#endif //WARGAME_FOOTSOLDIER_HPP
