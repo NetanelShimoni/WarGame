@@ -2,10 +2,10 @@
 // Created by netanel & Or on 25/05/2020.
 //
 #include "FootSoldier.hpp"
-#include <stdio.h>
+//#include <stdio.h>
 #include <iostream>
 #include <math.h>
-#include <zconf.h>
+//#include <zconf.h>
 
 void FootSoldier::Fight(vector<vector<Soldier *>> &board, pair<int, int> location) {
     int inf = 1000000000;
