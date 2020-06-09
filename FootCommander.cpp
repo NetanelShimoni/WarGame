@@ -21,7 +21,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <math.h>
-#include <zconf.h>
+//#include <zconf.h>
 void help_attack(vector<vector<Soldier *>> &board, pair<int, int> location){
     int inf = 1000000000;
     int dist = 0;
